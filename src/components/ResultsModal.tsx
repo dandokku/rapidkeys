@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Share2, Download, Copy, RefreshCw, X } from 'lucide-react';
+import { Share2, Download, Copy, RefreshCw } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { toPng } from 'html-to-image';
 

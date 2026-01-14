@@ -23,12 +23,10 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         localStorage.setItem('rapidkeys-theme', theme);
     }, [theme]);
 
-    const toggleTheme = () => setTheme(prev => prev === 'light' ? 'dark' : 'white' as any === 'dark' ? 'light' : prev === 'light' ? 'dark' : 'light');
-    // Clean up the logic above
-    const toggleThemeCorrected = () => setTheme(prev => prev === 'light' ? 'dark' : 'light');
+    const toggleTheme = () => setTheme(prev => prev === 'light' ? 'dark' : 'light');
 
     return (
-        <ThemeContext.Provider value={{ theme, toggleTheme: toggleThemeCorrected }}>
+        <ThemeContext.Provider value={{ theme, toggleTheme }}>
             {children}
         </ThemeContext.Provider>
     );

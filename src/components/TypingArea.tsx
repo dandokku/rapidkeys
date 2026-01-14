@@ -67,8 +67,13 @@ export const TypingArea: React.FC<TypingAreaProps> = ({
                                     <motion.span
                                         layoutId="caret"
                                         className="absolute -left-[1px] top-1/10 h-[80%] w-[3px] bg-brand-primary rounded-full shadow-[0_0_8px_rgba(59,130,246,0.6)]"
-                                        animate={{ opacity: [1, 0] }}
-                                        transition={{ repeat: Infinity, duration: 0.8, ease: "steps(1)" }}
+                                        animate={{ opacity: [1, 1, 0, 0] }}
+                                        transition={{
+                                            repeat: Infinity,
+                                            duration: 1,
+                                            times: [0, 0.5, 0.5, 1],
+                                            ease: "linear"
+                                        }}
                                     />
                                 )}
                                 {char}

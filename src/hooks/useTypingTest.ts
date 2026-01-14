@@ -4,7 +4,6 @@ import { generateWords, type Difficulty } from '../utils/wordGenerator';
 export const useTypingTest = (duration: number = 30, difficulty: Difficulty = 'easy') => {
     const [words, setWords] = useState<string[]>([]);
     const [userInput, setUserInput] = useState('');
-    const [currentIndex, setCurrentIndex] = useState(0);
     const [timeLeft, setTimeLeft] = useState(duration);
     const [isActive, setIsActive] = useState(false);
     const [isFinished, setIsFinished] = useState(false);
@@ -17,7 +16,7 @@ export const useTypingTest = (duration: number = 30, difficulty: Difficulty = 'e
         totalChars: 0,
     });
 
-    const timerRef = useRef<NodeJS.Timeout | null>(null);
+    const timerRef = useRef<any>(null);
 
     const wordsString = useMemo(() => words.join(' '), [words]);
 
@@ -25,7 +24,6 @@ export const useTypingTest = (duration: number = 30, difficulty: Difficulty = 'e
         const newWords = generateWords(100, difficulty);
         setWords(newWords);
         setUserInput('');
-        setCurrentIndex(0);
         setTimeLeft(duration);
         setIsActive(false);
         setIsFinished(false);
