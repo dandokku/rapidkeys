@@ -60,7 +60,7 @@ export const TypingArea: React.FC<TypingAreaProps> = ({
                                     status === 'correct' && "text-brand-secondary",
                                     status === 'incorrect' && "text-error underline decoration-error/50",
                                     isCurrent && "text-[var(--accent-color)]",
-                                    status === 'neutral' && index >= userInput.length && "text-[var(--text-secondary)]/40"
+                                    status === 'neutral' && index >= userInput.length && "text-[var(--text-secondary)]/70"
                                 )}
                             >
                                 {isCurrent && !isFinished && (
@@ -84,8 +84,8 @@ export const TypingArea: React.FC<TypingAreaProps> = ({
             </div>
 
             {!isActive && !isFinished && (
-                <div className="absolute inset-0 flex items-center justify-center bg-[var(--bg-primary)]/50 backdrop-blur-[2px] rounded-3xl pointer-events-none">
-                    <p className="text-[var(--text-secondary)] animate-pulse font-medium">Click or press any key to start typing...</p>
+                <div className="absolute inset-0 flex items-center justify-center bg-[var(--bg-primary)]/20 backdrop-blur-[1px] rounded-3xl pointer-events-none">
+                    <p className="text-[var(--text-primary)] animate-pulse font-bold text-lg">Click or press any key to start typing...</p>
                 </div>
             )}
         </div>

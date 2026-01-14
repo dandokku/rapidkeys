@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { motion } from 'framer-motion';
 import { Layout } from './components/Layout';
 import { TypingArea } from './components/TypingArea';
 import { StatsPanel } from './components/StatsPanel';
@@ -64,14 +65,26 @@ function App() {
   return (
     <Layout>
       <div className="w-full max-w-4xl flex flex-col items-center">
+        {!isActive && !isFinished && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mb-8 text-sm font-medium text-[var(--bg-primary)] flex items-center bg-brand-primary px-4 py-2 rounded-full shadow-lg shadow-brand-primary/20"
+          >
+            Tip: Press any key to start typing!
+          </motion.div>
+        )}
+
         {!isFinished && (
-          <Settings
-            duration={duration}
-            difficulty={difficulty}
-            onDurationChange={setDuration}
-            onDifficultyChange={setDifficulty}
-            isActive={isActive}
-          />
+          <div className="w-full mb-12">
+            <Settings
+              duration={duration}
+              difficulty={difficulty}
+              onDurationChange={setDuration}
+              onDifficultyChange={setDifficulty}
+              isActive={isActive}
+            />
+          </div>
         )}
 
         <StatsPanel
@@ -96,12 +109,6 @@ function App() {
           >
             {soundEnabled ? <Volume2 size={20} /> : <VolumeX size={20} />}
           </button>
-
-          {!isActive && !isFinished && (
-            <div className="text-sm font-medium text-[var(--text-secondary)] flex items-center glass px-4 rounded-xl">
-              Tip: Press any key to start typing!
-            </div>
-          )}
         </div>
       </div>
 

@@ -1,9 +1,6 @@
-import React from 'react';
-import { useTheme } from '../context/ThemeContext';
-import { Sun, Moon, Keyboard } from 'lucide-react';
+import { Keyboard } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
-    const { theme, toggleTheme } = useTheme();
 
     return (
         <nav className="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto w-full">
@@ -16,13 +13,11 @@ export const Navbar: React.FC = () => {
                 </h1>
             </div>
 
-            <button
-                onClick={toggleTheme}
-                className="p-2 rounded-xl glass hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-all duration-300 text-[var(--text-primary)]"
-                aria-label="Toggle theme"
-            >
-                {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
-            </button>
+            <div className="flex items-center gap-4">
+                <div className="text-xs font-medium text-[var(--text-secondary)] glass px-3 py-1 rounded-full border-brand-primary/20">
+                    BETA v1.0
+                </div>
+            </div>
         </nav>
     );
 };

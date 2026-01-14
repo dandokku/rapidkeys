@@ -1,73 +1,74 @@
-# React + TypeScript + Vite
+# ⚡ RapidKeys - Master Your Typing Speed
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+RapidKeys is a modern, minimalist typing speed test application built with **React**, **TypeScript**, and **Tailwind CSS**. It features a sleek glassmorphism design, real-time analytics, and a premium user experience.
 
-Currently, two official plugins are available:
+![RapidKeys Showcase](https://via.placeholder.com/800x450?text=RapidKeys+Dashboard)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## React Compiler
+- **Real-time Analytics**: Track your WPM (Words Per Minute), Accuracy, and Time remaining instantly.
+- **Customizable Sessions**: 
+  - Durations: 15, 30, 60, or 120 seconds.
+  - Difficulty: Easy, Medium, and Hard word sets.
+- **Premium Aesthetics**: 
+  - Dark mode by default for focused typing.
+  - Glassmorphism UI elements.
+  - Smooth Framer Motion animations.
+- **Audio Feedback**: Satisfying mechanical keyboard sounds (toggleable).
+- **Shareable Results**: Share your typing stats as an image, text, or via a unique URL.
+- **Mobile Responsive**: Practice your typing on any device.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Tech Stack
 
-## Expanding the ESLint configuration
+- **Frontend**: [React 18](https://reactjs.org/)
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Build Tool**: [Vite](https://vitejs.dev/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Getting Started
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Prerequisites
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Node.js (v18 or higher)
+- npm or yarn
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Installation
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/dandokku/rapidkeys.git
+   cd rapidkeys
+   ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+3. **Start the development server**:
+   ```bash
+   npm run dev
+   ```
+
+4. **Build for production**:
+   ```bash
+   npm run build
+   ```
+
+## ⌨️ How to Use
+
+1. Choose your preferred **duration** and **difficulty**.
+2. Click on the typing area or simply start typing to begin the test.
+3. Follow the highlighted text. Correct characters turn emerald, while errors are highlighted in red.
+4. Once the timer reaches zero, view your detailed results in the modal.
+5. Share your achievement or click "Try Again" to beat your high score!
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+Built with ❤️ by [Jesulona](https://github.com/dandokku)
